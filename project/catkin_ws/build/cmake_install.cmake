@@ -127,6 +127,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ubuntu/project/catkin_ws/build/gtest/cmake_install.cmake")
   include("/home/ubuntu/project/catkin_ws/build/odometry/cmake_install.cmake")
+  include("/home/ubuntu/project/catkin_ws/build/colourcamera/cmake_install.cmake")
+  include("/home/ubuntu/project/catkin_ws/build/depthcamera/cmake_install.cmake")
   include("/home/ubuntu/project/catkin_ws/build/imu/cmake_install.cmake")
 
 endif()
