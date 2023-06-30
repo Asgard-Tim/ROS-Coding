@@ -1,8 +1,0 @@
-prefix=/home/ubuntu/project/catkin_ws/install
-
-Name: depthcamera
-Description: Description of depthcamera
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: cv_bridge image_transport roscpp sensor_msgs
