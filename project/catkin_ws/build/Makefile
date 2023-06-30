@@ -1114,6 +1114,19 @@ imu/fast:
 	$(MAKE) -f imu/CMakeFiles/imu.dir/build.make imu/CMakeFiles/imu.dir/build
 .PHONY : imu/fast
 
+#=============================================================================
+# Target rules for targets named pclpoints
+
+# Build rule for target.
+pclpoints: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pclpoints
+.PHONY : pclpoints
+
+# fast build rule for target.
+pclpoints/fast:
+	$(MAKE) -f pclpoints/CMakeFiles/pclpoints.dir/build.make pclpoints/CMakeFiles/pclpoints.dir/build
+.PHONY : pclpoints/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1200,6 +1213,7 @@ help:
 	@echo "... imu_generate_messages_nodejs"
 	@echo "... imu_gennodejs"
 	@echo "... imu"
+	@echo "... pclpoints"
 .PHONY : help
 
 

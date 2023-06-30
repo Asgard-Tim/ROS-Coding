@@ -130,6 +130,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ubuntu/project/catkin_ws/build/colourcamera/cmake_install.cmake")
   include("/home/ubuntu/project/catkin_ws/build/depthcamera/cmake_install.cmake")
   include("/home/ubuntu/project/catkin_ws/build/imu/cmake_install.cmake")
+  include("/home/ubuntu/project/catkin_ws/build/pclpoints/cmake_install.cmake")
 
 endif()
 

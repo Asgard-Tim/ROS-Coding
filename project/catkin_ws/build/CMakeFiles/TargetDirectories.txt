@@ -120,3 +120,11 @@
 /home/ubuntu/project/catkin_ws/build/imu/CMakeFiles/imu_generate_messages_nodejs.dir
 /home/ubuntu/project/catkin_ws/build/imu/CMakeFiles/imu_gennodejs.dir
 /home/ubuntu/project/catkin_ws/build/imu/CMakeFiles/imu.dir
+/home/ubuntu/project/catkin_ws/build/pclpoints/CMakeFiles/list_install_components.dir
+/home/ubuntu/project/catkin_ws/build/pclpoints/CMakeFiles/install.dir
+/home/ubuntu/project/catkin_ws/build/pclpoints/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/project/catkin_ws/build/pclpoints/CMakeFiles/edit_cache.dir
+/home/ubuntu/project/catkin_ws/build/pclpoints/CMakeFiles/pclpoints.dir
+/home/ubuntu/project/catkin_ws/build/pclpoints/CMakeFiles/test.dir
+/home/ubuntu/project/catkin_ws/build/pclpoints/CMakeFiles/install/strip.dir
+/home/ubuntu/project/catkin_ws/build/pclpoints/CMakeFiles/install/local.dir
