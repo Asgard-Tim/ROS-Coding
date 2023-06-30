@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/project/catkin_ws/devel
+
+Name: final_system
+Description: Description of final_system
+Version: 0.0.0
+Cflags: -I/home/ubuntu/project/catkin_ws/src/final_system/include
+Libs: -L${prefix}/lib 
+Requires: nav_msgs std_msgs roscpp sensor_msgs cv_bridge image_transport

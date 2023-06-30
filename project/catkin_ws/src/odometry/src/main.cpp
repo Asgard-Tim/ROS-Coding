@@ -5,47 +5,46 @@ using namespace std;
 
 void callback(const nav_msgs::Odometry::ConstPtr& ptr)
 {
-    cout << "std_msgs/Header header" << endl;
-    cout << "    uint32 seq: " << ptr->header.seq << endl;
-    cout << "    time stamp: " << ptr->header.stamp << endl;
-    cout << "    string frame_id: " << ptr->header.frame_id << endl;
-    cout << "string child_frame_id: " << ptr->child_frame_id << endl;
-    cout << "geometry_msgs/PoseWithCovariance pose" << endl;
-    cout << "    geometry_msgs/Pose pose" << endl;
-    cout << "        geometry_msgs/Point position" << endl;
-    cout << "        float64 x: " << ptr->pose.pose.position.x << endl;
-    cout << "        float64 y: " << ptr->pose.pose.position.y << endl;
-    cout << "        float64 z: " << ptr->pose.pose.position.z << endl;
-    cout << "    geometry_msgs/Quaternion orientation" << endl;
-    cout << "        float64 x: " << ptr->pose.pose.orientation.x << endl;
-    cout << "        float64 y: " << ptr->pose.pose.orientation.y << endl;
-    cout << "        float64 z: " << ptr->pose.pose.orientation.z << endl;
-    cout << "        float64 w: " << ptr->pose.pose.orientation.w << endl;
-    cout << "    float64[36] covariance" << endl;
-    cout << "        " << endl;
+    ROS_INFO("std_msgs/Header header");
+    ROS_INFO("    uint32 seq: %d", ptr->header.seq);
+    ROS_INFO("    time stamp: %d.%d", ptr->header.stamp.sec, ptr->header.stamp.nsec);
+    ROS_INFO("    string frame_id: %s", ptr->header.frame_id.c_str());
+    ROS_INFO("string child_frame_id: %s", ptr->child_frame_id.c_str());
+    ROS_INFO("geometry_msgs/PoseWithCovariance pose");
+    ROS_INFO("    geometry_msgs/Pose pose");
+    ROS_INFO("        geometry_msgs/Point position");
+    ROS_INFO("        float64 x: %f", ptr->pose.pose.position.x);
+    ROS_INFO("        float64 y: %f", ptr->pose.pose.position.y);
+    ROS_INFO("        float64 z: %f", ptr->pose.pose.position.z);
+    ROS_INFO("    geometry_msgs/Quaternion orientation");
+    ROS_INFO("        float64 x: %f", ptr->pose.pose.orientation.x);
+    ROS_INFO("        float64 y: %f", ptr->pose.pose.orientation.y);
+    ROS_INFO("        float64 z: %f", ptr->pose.pose.orientation.z);
+    ROS_INFO("        float64 w: %f", ptr->pose.pose.orientation.w);
+    ROS_INFO("    float64[36] covariance");
+    ROS_INFO("        ");
     for (int i = 0; i < 36; i++) {
-        cout << ptr->pose.covariance[i] << " ";
+        ROS_INFO("%f ", ptr->pose.covariance[i]);
     }
-    cout << endl;
-    cout << "geometry_msgs/TwistWithCovariance twist" << endl;
-    cout << "    geometry_msgs/Twist twist" << endl;
-    cout << "        geometry_msgs/Vector3 linear" << endl;
-    cout << "            float64 x: " << ptr->twist.twist.linear.x << endl;
-    cout << "            float64 y: " << ptr->twist.twist.linear.y << endl;
-    cout << "            float64 z: " << ptr->twist.twist.linear.z << endl;
-    cout << "        geometry_msgs/Vector3 angular" << endl;
-    cout << "            float64 x: " << ptr->twist.twist.angular.x << endl;
-    cout << "            float64 y: " << ptr->twist.twist.angular.y << endl;
-    cout << "            float64 z: " << ptr->twist.twist.angular.z << endl;
-    cout << "    float64[36] covariance" << endl;
-    cout << "        " << endl;
+    ROS_INFO("geometry_msgs/TwistWithCovariance twist");
+    ROS_INFO("    geometry_msgs/Twist twist");
+    ROS_INFO("        geometry_msgs/Vector3 linear");
+    ROS_INFO("            float64 x: %f", ptr->twist.twist.linear.x);
+    ROS_INFO("            float64 y: %f", ptr->twist.twist.linear.y);
+    ROS_INFO("            float64 z: %f", ptr->twist.twist.linear.z);
+    ROS_INFO("        geometry_msgs/Vector3 angular");
+    ROS_INFO("            float64 x: %f", ptr->twist.twist.angular.x);
+    ROS_INFO("            float64 y: %f", ptr->twist.twist.angular.y);
+    ROS_INFO("            float64 z: %f", ptr->twist.twist.angular.z);
+    ROS_INFO("    float64[36] covariance");
+    ROS_INFO("        ");
     for (int i = 0; i < 36; i++) {
-        cout << ptr->twist.covariance[i] << " ";
+        ROS_INFO("%f ", ptr->twist.covariance[i]);
     }
-    cout << endl;
-    cout << "-------------------------------------------------------------" << endl;
-    return ;
+    ROS_INFO("-------------------------------------------------------------");
+    return;
 }
+
 
 int main(int argc, char** argv)
 {

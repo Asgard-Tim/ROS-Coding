@@ -5,44 +5,42 @@ using namespace std;
 
 void callback(const sensor_msgs::Imu::ConstPtr& ptr)
 {
-    cout << "std_msgs/Header header" << endl;
-    cout << "    uint32 seq: " << ptr->header.seq << endl;
-    cout << "    time stamp: " << ptr->header.stamp << endl;
-    cout << "    string frame_id: " << ptr->header.frame_id << endl;
-    cout << "geometry_msgs/Quaternion orientation" << endl;
-    cout << "    float64 x: " << ptr->orientation.x << endl;
-    cout << "    float64 y: " << ptr->orientation.y << endl;
-    cout << "    float64 z: " << ptr->orientation.z << endl;
-    cout << "    float64 w: " << ptr->orientation.w << endl;
-    cout << "float64[9] orientation_covariance" << endl;
-    cout << "    ";
-    for (int i = 0; i < 9; i++) {
-        cout << ptr->orientation_covariance[i] << " ";
-    }
-    cout << endl;
-    cout << "geometry_msgs/Vector3 angular_velocity" << endl;
-    cout << "    float64 x: " << ptr->angular_velocity.x << endl;
-    cout << "    float64 y: " << ptr->angular_velocity.y << endl;
-    cout << "    float64 z: " << ptr->angular_velocity.z << endl;
-    cout << "float64[9] angular_velocity_covariance" << endl;
-    cout << "    ";
-    for (int i = 0; i < 9; i++) {
-        cout << ptr->angular_velocity_covariance[i] << " ";
-    }
-    cout << endl;
-    cout << "geometry_msgs/Vector3 linear_acceleration" << endl;
-    cout << "    float64 x: " << ptr->linear_acceleration.x << endl;
-    cout << "    float64 y: " << ptr->linear_acceleration.y << endl;
-    cout << "    float64 z: " << ptr->linear_acceleration.z << endl;
-    cout << "float64[9] linear_acceleration_covariance" << endl;
-    cout << "    ";
-    for (int i = 0; i < 9; i++) {
-        cout << ptr->linear_acceleration_covariance[i] << " ";
-    }
-    cout << endl;
-    cout << "-------------------------------------------------------------" << endl;
-    return ;
+    ROS_INFO("std_msgs/Header header");
+    ROS_INFO("    uint32 seq: %d", ptr->header.seq);
+    ROS_INFO("    time stamp: %d.%d", ptr->header.stamp.sec, ptr->header.stamp.nsec);
+    ROS_INFO("    string frame_id: %s", ptr->header.frame_id.c_str());
+    ROS_INFO("geometry_msgs/Quaternion orientation");
+    ROS_INFO("    float64 x: %f", ptr->orientation.x);
+    ROS_INFO("    float64 y: %f", ptr->orientation.y);
+    ROS_INFO("    float64 z: %f", ptr->orientation.z);
+    ROS_INFO("    float64 w: %f", ptr->orientation.w);
+    ROS_INFO("float64[9] orientation_covariance");
+    ROS_INFO("    %f %f %f %f %f %f %f %f %f",
+             ptr->orientation_covariance[0], ptr->orientation_covariance[1], ptr->orientation_covariance[2],
+             ptr->orientation_covariance[3], ptr->orientation_covariance[4], ptr->orientation_covariance[5],
+             ptr->orientation_covariance[6], ptr->orientation_covariance[7], ptr->orientation_covariance[8]);
+    ROS_INFO("geometry_msgs/Vector3 angular_velocity");
+    ROS_INFO("    float64 x: %f", ptr->angular_velocity.x);
+    ROS_INFO("    float64 y: %f", ptr->angular_velocity.y);
+    ROS_INFO("    float64 z: %f", ptr->angular_velocity.z);
+    ROS_INFO("float64[9] angular_velocity_covariance");
+    ROS_INFO("    %f %f %f %f %f %f %f %f %f",
+             ptr->angular_velocity_covariance[0], ptr->angular_velocity_covariance[1], ptr->angular_velocity_covariance[2],
+             ptr->angular_velocity_covariance[3], ptr->angular_velocity_covariance[4], ptr->angular_velocity_covariance[5],
+             ptr->angular_velocity_covariance[6], ptr->angular_velocity_covariance[7], ptr->angular_velocity_covariance[8]);
+    ROS_INFO("geometry_msgs/Vector3 linear_acceleration");
+    ROS_INFO("    float64 x: %f", ptr->linear_acceleration.x);
+    ROS_INFO("    float64 y: %f", ptr->linear_acceleration.y);
+    ROS_INFO("    float64 z: %f", ptr->linear_acceleration.z);
+    ROS_INFO("float64[9] linear_acceleration_covariance");
+    ROS_INFO("    %f %f %f %f %f %f %f %f %f",
+             ptr->linear_acceleration_covariance[0], ptr->linear_acceleration_covariance[1], ptr->linear_acceleration_covariance[2],
+             ptr->linear_acceleration_covariance[3], ptr->linear_acceleration_covariance[4], ptr->linear_acceleration_covariance[5],
+             ptr->linear_acceleration_covariance[6], ptr->linear_acceleration_covariance[7], ptr->linear_acceleration_covariance[8]);
+    ROS_INFO("-------------------------------------------------------------");
+    return;
 }
+
 
 int main(int argc, char** argv)
 {

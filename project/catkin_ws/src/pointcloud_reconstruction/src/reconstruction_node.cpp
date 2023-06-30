@@ -21,9 +21,9 @@ void pointCloudCallback(const sensor_msgs::PointCloud2::ConstPtr& msg) {
     pcl::PointCloud<pcl::Normal>::Ptr normals(new pcl::PointCloud<pcl::Normal>);
     pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
     ne.setInputCloud(cloud);
-    pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>());
+    pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
     ne.setSearchMethod(tree);
-    ne.setKSearch(20);
+    ne.setKSearch(20); // 设置最近邻点的个数
     ne.compute(*normals);
 
     // 将点云和法线合并为 PointCloud<PointNormal>
