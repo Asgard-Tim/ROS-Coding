@@ -22,7 +22,7 @@ void callback(const sensor_msgs::PointCloud2::ConstPtr& msg)
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "show_point_cloud");
+    ros::init(argc, argv, "pclpoints");
     ros::NodeHandle nodeHandle;
     ros::Subscriber subscriber = nodeHandle.subscribe("/rslidar_points", 1000, callback);
     ros::spin();

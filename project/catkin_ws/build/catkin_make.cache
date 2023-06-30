@@ -1,2 +1,2 @@
-colourcamera:depthcamera:imu:odometry:pclpoints
+colourcamera:depthcamera:imu:odometry:pclpoints:pointcloud_reconstruction
 -DCATKIN_DEVEL_PREFIX=/home/ubuntu/project/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/project/catkin_ws/install -G Unix Makefiles

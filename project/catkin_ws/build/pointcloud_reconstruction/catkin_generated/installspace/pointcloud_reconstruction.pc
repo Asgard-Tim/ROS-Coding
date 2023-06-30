@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/project/catkin_ws/install
+
+Name: pointcloud_reconstruction
+Description: Description of pointcloud_reconstruction
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: pcl_ros roscpp sensor_msgs
