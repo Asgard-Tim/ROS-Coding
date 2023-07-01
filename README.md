@@ -4,11 +4,11 @@
 
 这里给出一些操作命令可供复制：
 
+（1）docker虚拟机启动容器
+
 docker run -p 5900:5900 -p 6080:80 --rm -e RESOLUTION=1920x1080 liujiboy/ros
 
-roscore
-
-rosbag play --loop --pause all.bag
+（2）库文件安装
 
 sudo apt-get update
 
@@ -32,8 +32,17 @@ sudo apt-get install ros-kinetic-gmapping
 
 sudo apt-get install ros-kinetic-slam-gmapping
 
+（3）运行程序
+
+roscore
+
+rosbag play --loop --pause all.bag
+
+rosrun gmapping slam_gmapping
+
 source /home/ubuntu/project/catkin_ws/devel/setup.bash
 
 cd /home/ubuntu/project/catkin_ws
 
 rosrun final_system final_system
+
