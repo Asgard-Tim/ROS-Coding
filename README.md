@@ -24,6 +24,14 @@ sudo apt-get install libproj-dev
 
 sudo apt-get install libpcl-dev
 
+sudo apt-get install libsdl1.2-dev
+
+sudo apt install libsdl-image1.2-dev
+
+sudo apt-get install ros-kinetic-gmapping
+
+sudo apt-get install ros-kinetic-slam-gmapping
+
 source /home/ubuntu/project/catkin_ws/devel/setup.bash
 
 cd /home/ubuntu/project/catkin_ws
