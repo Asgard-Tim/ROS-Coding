@@ -1,6 +1,6 @@
 使用指南
 
-详细操作过程详见演示视频Demo(链接：)
+详细操作过程详见演示视频Demo(链接：https://www.bilibili.com/video/BV1YV411M7jj/)
 
 这里给出一些操作命令可供复制：
 
