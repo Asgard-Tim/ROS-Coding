@@ -17,9 +17,35 @@
 #include "pcl/PCLPointCloud2.h"
 #include "pcl/conversions.h"
 #include "pcl_ros/transforms.h"
+#include "nav_msgs/OccupancyGrid.h"
 using namespace std;
 
 pcl::visualization::CloudViewer viewer("Cloud Viewer");
+
+void callback6(const nav_msgs::OccupancyGrid::ConstPtr& ptr)
+{   
+    std::cout << "resolution: " << ptr->info.resolution << std::endl;
+    std::cout << "width: " << ptr->info.width << std::endl;
+    std::cout << "height: " << ptr->info.height << std::endl;
+    double scale = 1.0;
+    int width = 1200;
+    int height = 1200;
+    cv::Point offset(-1600, -1600);
+    cv::Mat map = cv::Mat::zeros(cv::Size(width, height), CV_8UC3);
+    for (int i = 0; i < ptr->info.width * ptr->info.height; ++i) {
+        int x = (i % ptr->info.width + offset.x) * scale, y = (i / ptr->info.width + offset.y) * scale;
+        if (ptr->data[i] == -1) {
+            cv::circle(map, cv::Point(x, y), 1, cv::Scalar(255, 255, 255), -1);
+        } else if (ptr->data[i] >= 80) {
+            cv::circle(map, cv::Point(x, y), 3, cv::Scalar(0, 0, 0), -1);
+        } else {
+            cv::circle(map, cv::Point(x, y), 3, cv::Scalar(0, 255, 0), -1);
+        }    
+    }
+    cv::imshow("map", map);
+    cv::waitKey(1000);
+    return ;
+}
 
 void callback5(const sensor_msgs::PointCloud2::ConstPtr& msg)
 {
@@ -178,6 +204,7 @@ void systeminitialize(string username)
     cout<<"*             3.展示颜色相机数据         *"<<endl;
     cout<<"*             4.展示深度相机数据         *"<<endl;
     cout<<"*             5.展示点云数据             *"<<endl;
+    cout<<"*             6.Gmapping算法建图         *"<<endl;
     cout<<"*             0.退出登录                 *"<<endl;
     cout<<"*                                        *"<<endl;
     cout<<"******************************************"<<endl;
@@ -293,6 +320,13 @@ int main(int argc, char** argv)
                         ros::NodeHandle nodeHandle;
                         ros::Subscriber subscriber = nodeHandle.subscribe("/rslidar_points", 1000, callback5);
                         ros::spin();  
+                    }
+                    else if(op2=="6")
+                    {
+                        ros::init(argc, argv, "show_map");
+                        ros::NodeHandle nodeHandle;
+                        ros::Subscriber subscriber = nodeHandle.subscribe("/map", 1000, callback6);
+                        ros::spin(); 
                     }
                     else if(op2=="0")
                     {
